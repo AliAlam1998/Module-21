@@ -1,0 +1,63 @@
+Analysis of Charity Donation Success Prediction Model
+
+Purpose
+The purpose of this analysis is to develop a predictive model that determines the success of charity donations based on various features provided in the dataset. We aim to preprocess the data, train a deep neural network model, and evaluate its performance in predicting the success of charity donations.
+
+Preprocessing
+Dropping Non-Beneficial Columns
+We first removed the 'EIN' and 'NAME' columns as they were non-beneficial for predicting donation success.
+
+Binning Categorical Variables
+We binned the 'APPLICATION_TYPE' and 'CLASSIFICATION' columns to reduce the number of unique values and improve model performance. This was done by replacing less frequent values with 'Other'.
+
+Encoding Categorical Variables
+Categorical variables were encoded using one-hot encoding to convert them into a numeric format suitable for model training.
+
+Splitting the Dataset
+The preprocessed dataset was split into training and testing sets using a 75:25 ratio.
+
+Model Training and Evaluation
+Neural Network Architecture
+We constructed a deep neural network (DNN) model with two hidden layers and an output layer. The first hidden layer consisted of 80 units, the second hidden layer had 30 units, and the output layer used a sigmoid activation function for binary classification.
+
+Model Compilation
+The model was compiled using binary cross-entropy loss and the Adam optimizer, with accuracy as the evaluation metric.
+
+Model Training
+The model was trained for 100 epochs using the training data, and the training history was stored for analysis.
+
+Model Evaluation
+Finally, the model was evaluated using the test dataset, and the loss and accuracy metrics were recorded.
+
+Results
+What is the loss and accuracy of the model on the test dataset?
+
+Loss: 0.5669
+Accuracy: 72.97%
+
+How many total parameters does the model have?
+
+The model has a total of 5981 parameters.
+What was the strategy used for binning categorical data, and why was it chosen?
+
+The strategy involved replacing less frequent values with 'Other' to reduce the dimensionality of categorical variables. This helps prevent overfitting and makes the model more generalizable to unseen data.
+How many unique values does the 'APPLICATION_TYPE' column have after binning?
+
+After binning, the 'APPLICATION_TYPE' column has 9 unique values.
+How many unique values does the 'CLASSIFICATION' column have after binning?
+
+After binning, the 'CLASSIFICATION' column has 6 unique values.
+What activation function is used in the output layer of the model, and why was it chosen?
+
+The output layer uses the sigmoid activation function, which is suitable for binary classification tasks. It squashes the output between 0 and 1, representing the probability of donation success.
+
+Overall Model Summary
+The deep neural network model achieved an accuracy of approximately 73% on the test dataset, indicating moderate predictive performance. The model consists of two hidden layers with a total of 5981 parameters. Binning was used to reduce the dimensionality of categorical variables, and one-hot encoding was applied to convert categorical data into a numeric format suitable for training.
+
+Alternative Model Consideration
+An alternative model for this problem could be a Random Forest classifier. Random Forests are robust to noisy data and work well with categorical features. They can handle high-dimensional data efficiently and are less prone to overfitting compared to deep neural networks. Random Forests also provide feature importance scores, which could offer insights into the significant predictors of donation success.
+
+
+
+
+
